@@ -6,7 +6,7 @@
 http://www.mulesoft.org/schema/mule/ftp http://www.mulesoft.org/schema/mule/ftp/current/mule-ftp.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<flow name="car-bookmyholiday-sysFlow" doc:id="3558195f-b8c9-46be-ac01-b979c52cdbc9" >
-		<ftp:listener doc:name="On New or Updated File" doc:id="0d88a420-d6ad-4f68-abdb-e73962cf1e2c" directory="/FTP/muleFTPFile" autoDelete="true">
+		<ftp:listener doc:name="On New or Updated File" doc:id="0d88a420-d6ad-4f68-abdb-e73962cf1e2c" directory="/FTP/muleFTPFile" autoDelete="true" config-ref="FTP_Config">
 			<scheduling-strategy >
 				<fixed-frequency />
 			</scheduling-strategy>

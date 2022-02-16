@@ -6,7 +6,7 @@
 http://www.mulesoft.org/schema/mule/ftp http://www.mulesoft.org/schema/mule/ftp/current/mule-ftp.xsd
 http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd">
 	<ftp:config name="FTP_Config" doc:name="FTP Config" doc:id="ea0e1cdf-c26a-43a2-b6e0-3841919369aa" >
-		<ftp:connection host="${ftp.host}" port="${ftp.port}" username="${ftp.username}" password="${ftp.password}" />
+		<ftp:connection host="127.0.0.1" username="dcuser" password="File@dc474" />
 	</ftp:config>
-	<configuration-properties doc:name="Configuration properties" doc:id="ba126f1a-73f3-49f8-9762-72750ff00ec4" file="config.yaml" />
+	<configuration-properties doc:name="Configuration properties" doc:id="b1098e90-5f36-4ca8-9316-8529c94885cb" file="config.yaml" />
 </mule>

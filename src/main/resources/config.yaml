@@ -1,7 +1,7 @@
 ftp:
-  host:"127.0.0.1"
-  port:"21"
-  username:"dcuser"
-  password:"File@dc474"
+ host:"127.0.0.1"
+ port:"21"
+ username:"dcuser"
+ password:"File@dc474"
 
 
