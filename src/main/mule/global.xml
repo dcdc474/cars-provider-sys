@@ -8,6 +8,6 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
 	<ftp:config name="FTP_Config" doc:name="FTP Config" doc:id="ea0e1cdf-c26a-43a2-b6e0-3841919369aa" >
 		<ftp:connection host="127.0.0.1" username="dcuser" password="File@dc474" />
 	</ftp:config>
-	<configuration-properties doc:name="Configuration properties" doc:id="b1098e90-5f36-4ca8-9316-8529c94885cb" file="config.yaml" />
 	<api-gateway:autodiscovery apiId="${autodiscover.apiId}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="ee639a92-435a-493a-9fc0-9cf9359acea3" flowRef="${autodiscover.flow}" />
+	<configuration-properties doc:name="Configuration properties" doc:id="be1f8e03-5ec5-480f-9e32-27d34acebf30" file="config.yaml" />
 </mule>

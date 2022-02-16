@@ -1,9 +1,9 @@
 ftp:
- host:"127.0.0.1"
- port:"21"
- username:"dcuser"
- password:"File@dc474"
+  host: "127.0.0.1"
+  port: "21"
+  username: "dcuser"
+  password: "File@dc474"
 
 autodiscover:
- apiId:"17637905"
- flow:"sys-car-main"
+  apiId: "17637905"
+  flow: "cars-sys-main"
