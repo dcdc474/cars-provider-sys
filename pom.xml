@@ -46,6 +46,12 @@
 							<anypoint.platform.client_secret>${anypoint.platform.client_secret}</anypoint.platform.client_secret>
 						</properties>
 					</cloudHubDeployment>
+					<sharedLibraries>
+						<sharedLibrary>
+							<groupId>mysql</groupId>
+							<artifactId>mysql-connector-java</artifactId>
+						</sharedLibrary>
+					</sharedLibraries>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -65,13 +71,6 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 		<dependency>
-			<groupId>2f8dce0e-4fb6-42d2-ab96-8f6b2c8f4947</groupId>
-			<artifactId>cars-sys</artifactId>
-			<version>1.0.0</version>
-			<classifier>raml</classifier>
-			<type>zip</type>
-		</dependency>
-		<dependency>
 			<groupId>org.mule.modules</groupId>
 			<artifactId>mule-apikit-module</artifactId>
 			<version>1.5.8</version>
@@ -82,6 +81,24 @@
 			<artifactId>mule-ftp-connector</artifactId>
 			<version>1.5.5</version>
 			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.mule.connectors</groupId>
+			<artifactId>mule-db-connector</artifactId>
+			<version>1.12.0</version>
+			<classifier>mule-plugin</classifier>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.48</version>
+		</dependency>
+		<dependency>
+			<groupId>2f8dce0e-4fb6-42d2-ab96-8f6b2c8f4947</groupId>
+			<artifactId>cars-sys</artifactId>
+			<version>1.0.1</version>
+			<classifier>raml</classifier>
+			<type>zip</type>
 		</dependency>
 	</dependencies>
 

@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway" xmlns:ftp="http://www.mulesoft.org/schema/mule/ftp"
-	xmlns="http://www.mulesoft.org/schema/mule/core"
-	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway"
+	xmlns:ftp="http://www.mulesoft.org/schema/mule/ftp"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/ftp http://www.mulesoft.org/schema/mule/ftp/current/mule-ftp.xsd
-http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd">
+http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd">
 	<ftp:config name="FTP_Config" doc:name="FTP Config" doc:id="ea0e1cdf-c26a-43a2-b6e0-3841919369aa" >
 		<ftp:connection host="127.0.0.1" username="dcuser" password="File@dc474" />
 	</ftp:config>
 	<api-gateway:autodiscovery apiId="${autodiscover.apiId}" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="ee639a92-435a-493a-9fc0-9cf9359acea3" flowRef="${autodiscover.flow}" />
 	<configuration-properties doc:name="Configuration properties" doc:id="be1f8e03-5ec5-480f-9e32-27d34acebf30" file="config.yaml" />
+	<db:config name="Database_Config" doc:name="Database Config" doc:id="eb32720a-5c12-4e81-ae3a-36566a825254" >
+		<db:my-sql-connection host="${db.host}" port="${db.port}" user="${db.user}" password="${db.password}" database="${db.database}" />
+	</db:config>
 </mule>

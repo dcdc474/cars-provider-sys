@@ -3,7 +3,14 @@ ftp:
   port: "21"
   username: "dcuser"
   password: "File@dc474"
-
+  
+db:
+  host: "dcbookmyholiday.cvvndxt972kn.us-east-1.rds.amazonaws.com"
+  port: "3306"
+  user: "admin"
+  password: "administrator"
+  database: "BookMyHoliday"
+  
 autodiscover:
   apiId: "17637905"
   flow: "cars-sys-main"
