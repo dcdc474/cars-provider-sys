@@ -1,0 +1,14 @@
+ID;code;city;carType;number;provider
+1;code1;AUS;small;212-456-7901;Ola
+2;code2;AUS;medium;212-456-7902;Ola
+3;code3;AUS;large;212-456-7903;Ola
+4;code4;BOS;small;212-456-7904;Ola
+5;code5;BOS;medium;212-456-7905;Ola
+6;code6;BOS;large;212-456-7906;Ola
+7;code7;CHI;small;212-456-7907;Uber
+8;code8;CHI;medium;212-456-7908;Uber
+9;code9;CHI;large;212-456-7909;Uber
+10;code10;DAL;small;212-456-7910;Uber
+11;code11;DAL;medium;212-456-7911;Uber
+12;code12;DAL;large;212-456-7912;Uber
+
