@@ -44,4 +44,25 @@ payload]]></ee:set-payload>
 		</ee:transform>
 		<logger level="INFO" doc:name="Logger" doc:id="d42d6a67-1fa5-431a-afb1-25b822e9584c" message="Getting specific car by Id end..."/>
 	</flow>
+	<flow name="ExportDataToFTP" doc:id="efcd2c55-0bd1-452a-a59e-3837e7d6a588" >
+		<scheduler doc:name="Scheduler" doc:id="7b532df6-984d-4aac-a623-67efc1403b17" >
+			<scheduling-strategy >
+				<fixed-frequency frequency="3" timeUnit="SECONDS"/>
+			</scheduling-strategy>
+		</scheduler>
+		<logger level="INFO" doc:name="Logger" doc:id="31243bb1-c69b-4923-aa88-f7a15fb9fba6" message="Exporting cars data begin..."/>
+		<db:select doc:name="Select" doc:id="739d9a51-ae16-4bca-81fd-644f3f7c1a5d" config-ref="Database_Config">
+			<db:sql ><![CDATA[select * from cars]]></db:sql>
+		</db:select>
+		<ee:transform doc:name="Transform Message" doc:id="380c928b-8aa6-4273-b98a-0206d365032e" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/csv
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<ftp:write doc:name="Write" doc:id="2a79451f-6ed2-4316-9b6c-83193e52a072" config-ref="FTP_Config" path="#['/FTP/muleFTPFile/CarsDataToExport_'++(now() as String {format:'yyyy-MMM-dd-hh-ss'})]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="3d38be6e-f10e-4326-9345-1b7c664b799b" message="Exporting cars data End..."/>
+	</flow>
 </mule>
