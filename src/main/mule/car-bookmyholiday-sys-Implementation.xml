@@ -26,4 +26,22 @@ payload ]]></ee:set-payload>
 		</ee:transform>
 		<logger level="INFO" doc:name="Logger" doc:id="2e6d7f0a-fd3c-4777-87bc-95b97895cba9" message="Cars data fetching begin..."/>
 	</flow>
+	<flow name="GetCarByID" doc:id="36de7fcc-cdab-4a13-98c5-98da5392db1d" >
+		<logger level="INFO" doc:name="Logger" doc:id="fe2c95b1-1d1c-4380-bbda-c6aace89dd21" message="Getting specific car by Id begin..."/>
+		<db:select doc:name="Select" doc:id="70fe7a2b-f680-4e1e-9663-925e53755211" config-ref="Database_Config">
+			<db:sql ><![CDATA[select * from cars where ID=:uriID]]></db:sql>
+			<db:input-parameters ><![CDATA[#[{
+	'uriID':attributes.uriParams.ID
+}]]]></db:input-parameters>
+		</db:select>
+		<ee:transform doc:name="Transform Message" doc:id="f6b365ca-f2bc-490a-9383-2e08572e66ae" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="d42d6a67-1fa5-431a-afb1-25b822e9584c" message="Getting specific car by Id end..."/>
+	</flow>
 </mule>

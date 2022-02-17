@@ -3,7 +3,7 @@
     <http:listener-config name="cars-sys-httpListenerConfig">
         <http:listener-connection host="0.0.0.0" port="8081" />
     </http:listener-config>
-    <apikit:config name="cars-sys-config" api="resource::2f8dce0e-4fb6-42d2-ab96-8f6b2c8f4947:cars-sys:1.0.1:raml:zip:cars-sys.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
+    <apikit:config name="cars-sys-config" api="resource::2f8dce0e-4fb6-42d2-ab96-8f6b2c8f4947:cars-sys:1.0.2:raml:zip:cars-sys.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
     <flow name="cars-sys-main">
         <http:listener config-ref="cars-sys-httpListenerConfig" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
@@ -153,5 +153,8 @@ output application/json
 }]]></ee:set-payload>
             </ee:message>
         </ee:transform>
+    </flow>
+    <flow name="get:\cars\(ID):cars-sys-config">
+		<flow-ref doc:name="Flow Reference" doc:id="32f64f19-a74c-46b9-aecf-0a7eed8cf5bc" name="GetCarByID"/>
     </flow>
 </mule>
